@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart - Cozy Crochet Loops</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🧶 Cozy Crochet Loops
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#about">About Us</a>
+        <a href="cart.html">Cart 🛒</a>
+        <a href="index.html#my-orders">My Orders</a>
+    </div>
+
+</nav>
+
+
+<section class="cart-page">
+
+    <h1>🛒 Your Shopping Cart</h1>
+
+    <div id="cart-container"></div>
+
+</section>
+
+
+<script>
+
+function getCart() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem("cozyCart")
+        ) || [];
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+function saveCart(cart) {
+
+    localStorage.setItem(
+        "cozyCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+function displayCart() {
+
+    const container =
+        document.getElementById("cart-container");
+
+
+    const cart = getCart();
+
+
+    if (cart.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty-cart">
+
+                <div class="empty-cart-icon">
+                    🧺
+                </div>
+
+                <h2>Your cart is empty</h2>
+
+                <p>
+                    Looks like you haven't added
+                    anything yet.
+                </p>
+
+                <a
+                    href="index.html#shop"
+                    class="hero-btn"
+                >
+                    Start Shopping 🛍️
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    let totalItems = 0;
+
+
+    let html = `
+
+        <div class="cart-items">
+
+    `;
+
+
+    cart.forEach(function(item, index) {
+
+        const quantity =
+            Number(item.quantity) || 1;
+
+
+        const price =
+            Number(item.price) || 0;
+
+
+        const itemTotal =
+            price * quantity;
+
+
+        total += itemTotal;
+
+        totalItems += quantity;
+
+
+        html += `
+
+            <div class="cart-item">
+
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                    class="cart-item-image"
+                    onerror="this.style.display='none';"
+                >
+
+
+                <div class="cart-item-details">
+
+                    <h2>
+                        ${item.name}
+                    </h2>
+
+
+                    <p>
+                        <strong>Colour:</strong>
+                        ${item.color || "Black"}
+                    </p>
+
+
+                    <p class="cart-price">
+                        ₹${price}
+                    </p>
+
+
+                    <div class="quantity-control">
+
+                        <button
+                            onclick="changeQuantity(${index}, -1)"
+                        >
+                            −
+                        </button>
+
+
+                        <span>
+                            ${quantity}
+                        </span>
+
+
+                        <button
+                            onclick="changeQuantity(${index}, 1)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cart-item-right">
+
+                    <strong>
+                        ₹${itemTotal}
+                    </strong>
+
+
+                    <button
+                        class="remove-btn"
+                        onclick="removeItem(${index})"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    html += `
+
+        </div>
+
+
+        <div class="cart-summary">
+
+            <div class="summary-row">
+
+                <span>
+                    Items
+                </span>
+
+                <strong>
+                    ${totalItems}
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong>
+                    ₹${total}
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row delivery-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong>
+                    FREE
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    ₹${total}
+                </strong>
+
+            </div>
+
+
+            <a
+                href="checkout.html"
+                class="checkout-btn"
+            >
+                Proceed to Checkout →
+            </a>
+
+
+            <a
+                href="index.html#shop"
+                class="continue-shopping"
+            >
+                ← Continue Shopping
+            </a>
+
+        </div>
+
+    `;
+
+
+    container.innerHTML = html;
+
+}
+
+
+function changeQuantity(index, change) {
+
+    const cart = getCart();
+
+
+    if (!cart[index]) {
+        return;
+    }
+
+
+    cart[index].quantity =
+        (Number(cart[index].quantity) || 1) + change;
+
+
+    if (cart[index].quantity <= 0) {
+
+        cart.splice(index, 1);
+
+    }
+
+
+    saveCart(cart);
+
+    displayCart();
+
+}
+
+
+function removeItem(index) {
+
+    const cart = getCart();
+
+
+    if (!cart[index]) {
+        return;
+    }
+
+
+    cart.splice(index, 1);
+
+
+    saveCart(cart);
+
+    displayCart();
+
+}
+
+
+displayCart();
+
+</script>
+
+</body>
+
+</html>

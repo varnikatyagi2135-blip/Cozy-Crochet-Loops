@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Crochet Loops</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo">🧶 Cozy Crochet Loops</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About Us</a>
+        <a href="cart.html">🛒 Cart</a>
+        <a href="#my-orders">📦 My Orders</a>
+    </nav>
+</header>
+
+
+<!-- ================= HOME ================= -->
+<section id="home" class="hero">
+    <div>
+        <h1>Welcome to Cozy Crochet Loops 💕</h1>
+        <p>Handmade crochet goodies made with love and cozy vibes.</p>
+        <a href="#shop" class="hero-button">Shop Now ✨</a>
+    </div>
+</section>
+
+
+<!-- ================= SHOP ================= -->
+<section id="shop" class="shop-section">
+
+    <h2>🛍️ Our Crochet Collection</h2>
+    <p class="section-subtitle">
+        Choose your favourite handmade crochet item.
+    </p>
+
+
+    <!-- ========== BAGS ========== -->
+    <div class="category-section">
+        <h3>👜 Crochet Bags</h3>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="Images/bag1.jpg.jpg" alt="Crochet Bag">
+                <h4>Classic Crochet Bag</h4>
+                <p class="price">₹799</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/bag2.jpg.jpg" alt="Crochet Bag">
+                <h4>Cozy Everyday Bag</h4>
+                <p class="price">₹749</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/cream pink bag.jpg.jpg" alt="Cream Pink Crochet Bag">
+                <h4>Cream Pink Bag</h4>
+                <p class="price">₹699</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/mini-bags.jpg.jpeg" alt="Mini Crochet Bag">
+                <h4>Mini Crochet Bag</h4>
+                <p class="price">₹499</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/Woven bags.jpg.jpg" alt="Woven Crochet Bag">
+                <h4>Woven Crochet Bag</h4>
+                <p class="price">₹899</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========== WATER BOTTLES ========== -->
+    <div class="category-section">
+        <h3>🥤 Water Bottle Accessories</h3>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="Images/bottle1.jpg" alt="Crochet Bottle">
+                <h4>Crochet Bottle Cover</h4>
+                <p class="price">₹399</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/bottle-holder.jpg.jpeg" alt="Bottle Holder">
+                <h4>Cozy Bottle Holder</h4>
+                <p class="price">₹449</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/bottle-holders.jpg.jpeg" alt="Bottle Holder">
+                <h4>Handmade Bottle Holder</h4>
+                <p class="price">₹429</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/cover.jpg" alt="Water Bottle Cover">
+                <h4>Cute Bottle Cover</h4>
+                <p class="price">₹349</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/water.jpg" alt="Crochet Water Bottle">
+                <h4>Cozy Water Bottle</h4>
+                <p class="price">₹399</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========== CLOTHES ========== -->
+    <div class="category-section">
+        <h3>🧥 Crochet Clothes & Warmers</h3>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="Images/bow cardiha.jpg" alt="Bow Cardigan">
+                <h4>Bow Cardigan</h4>
+                <p class="price">₹1,299</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/bow.jpg" alt="Crochet Bow">
+                <h4>Crochet Bow Top</h4>
+                <p class="price">₹899</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/bow-top.jpg.jpeg" alt="Bow Top">
+                <h4>Cute Bow Top</h4>
+                <p class="price">₹949</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/brown-cardigan.jpg.jpeg" alt="Brown Cardigan">
+                <h4>Cozy Brown Cardigan</h4>
+                <p class="price">₹1,399</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/download.jpg" alt="Crochet Clothing">
+                <h4>Cozy Crochet Wear</h4>
+                <p class="price">₹799</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/Fingerless-gloves.jpg.jpeg" alt="Fingerless Gloves">
+                <h4>Fingerless Gloves</h4>
+                <p class="price">₹499</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/Hand Warmers.jpg" alt="Hand Warmers">
+                <h4>Cozy Hand Warmers</h4>
+                <p class="price">₹449</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========== PHONE ACCESSORIES ========== -->
+    <div class="category-section">
+        <h3>📱 Crochet Phone Accessories</h3>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="Images/ch.1.jpg" alt="Phone Accessory">
+                <h4>Crochet Phone Charm</h4>
+                <p class="price">₹299</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/charger.jpg" alt="Charger Cover">
+                <h4>Charger Cozy</h4>
+                <p class="price">₹349</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/co.jpg" alt="Crochet Phone Accessory">
+                <h4>Cute Phone Accessory</h4>
+                <p class="price">₹299</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/Crochet phone.jpg" alt="Crochet Phone Cover">
+                <h4>Crochet Phone Cover</h4>
+                <p class="price">₹499</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/crochet.jpg" alt="Crochet Phone Item">
+                <h4>Crochet Phone Charm</h4>
+                <p class="price">₹449</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/cute phone.jpg" alt="Cute Phone Accessory">
+                <h4>Cute Phone Accessory</h4>
+                <p class="price">₹549</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/EARBUDS.jpg" alt="Crochet Earbuds Case">
+                <h4>Crochet Earbuds Case</h4>
+                <p class="price">₹399</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/phone-case.jpg.jpeg" alt="Crochet Phone Case">
+                <h4>Handmade Phone Case</h4>
+                <p class="price">₹599</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========== TEDDIES ========== -->
+    <div class="category-section">
+        <h3>🧸 Crochet Teddies & Toys</h3>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="Images/Crochet Bunny.jpg" alt="Crochet Bunny">
+                <h4>Crochet Bunny</h4>
+                <p class="price">₹699</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/crochet-bunny.jpg.jpeg" alt="Crochet Bunny">
+                <h4>Soft Bunny</h4>
+                <p class="price">₹649</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/Hello Kitty.jpg" alt="Hello Kitty Crochet">
+                <h4>Hello Kitty Crochet</h4>
+                <p class="price">₹749</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/kuromi cat.jpg" alt="Kuromi Crochet">
+                <h4>Kuromi Crochet Toy</h4>
+                <p class="price">₹749</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/Rabbit Toy.jpg" alt="Rabbit Toy">
+                <h4>Little Rabbit Toy</h4>
+                <p class="price">₹699</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="Images/teddy.jpg" alt="Crochet Teddy">
+                <h4>Cozy Crochet Teddy</h4>
+                <p class="price">₹799</p>
+
+                <select class="colour-select">
+                    <option>Black</option>
+                    <option>Brown</option>
+                    <option>Cream</option>
+                    <option>Pink</option>
+                    <option>Beige</option>
+                </select>
+
+                <button onclick="addToCart(this)">Add to Cart 🛒</button>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT US ================= -->
+<section id="about" class="about-section">
+    <h2>💗 About Cozy Crochet Loops</h2>
+
+    <p>
+        Cozy Crochet Loops is a handmade crochet shop created for people
+        who love cute, cozy and unique things. Every product is made
+        with care and creativity. 🧶✨
+    </p>
+
+    <p>
+        From bags and bottle holders to cute toys and phone accessories,
+        we have something cozy for everyone!
+    </p>
+</section>
+
+
+<!-- ================= MY ORDERS ================= -->
+<section id="my-orders" class="orders-section">
+
+    <h2>📦 My Orders</h2>
+
+    <p class="section-subtitle">
+        Your orders will appear here after you place an order.
+    </p>
+
+    <div id="orders-container">
+        <div class="no-orders">
+            <h3>🛍️ No orders yet</h3>
+            <p>Your placed orders will appear here.</p>
+            <a href="#shop">Start Shopping ✨</a>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>🧶 Cozy Crochet Loops</p>
+    <p>Made with love & crochet magic 💕</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

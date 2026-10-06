@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Cozy Crochet Loops</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🧶 Cozy Crochet Loops
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#about">About Us</a>
+        <a href="cart.html">Cart 🛒</a>
+        <a href="index.html#my-orders">My Orders</a>
+    </div>
+
+</nav>
+
+
+<main class="checkout-page">
+
+    <h1>🧾 Checkout</h1>
+
+    <p class="checkout-subtitle">
+        Almost there! Complete your details to place your order. 💕
+    </p>
+
+
+    <!-- CHECKOUT FORM -->
+
+    <form id="checkout-form">
+
+
+        <!-- CUSTOMER DETAILS -->
+
+        <section class="checkout-card">
+
+            <h2>👤 Customer Details</h2>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="customer-name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customer-name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customer-phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customer-phone"
+                        placeholder="10-digit mobile number"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DELIVERY ADDRESS -->
+
+        <section class="checkout-card">
+
+            <h2>🏠 Delivery Address</h2>
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="house">
+                        House / Flat / Building
+                    </label>
+
+                    <input
+                        type="text"
+                        id="house"
+                        placeholder="House or flat number"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="area">
+                        Area / Locality
+                    </label>
+
+                    <input
+                        type="text"
+                        id="area"
+                        placeholder="Area or locality"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="city">
+                        City
+                    </label>
+
+                    <select id="city" required>
+
+                        <option value="">
+                            Select your city
+                        </option>
+
+                        <option value="Ghaziabad">
+                            Ghaziabad
+                        </option>
+
+                        <option value="Noida">
+                            Noida
+                        </option>
+
+                        <option value="Greater Noida">
+                            Greater Noida
+                        </option>
+
+                        <option value="Delhi">
+                            Delhi
+                        </option>
+
+                        <option value="Gurugram">
+                            Gurugram
+                        </option>
+
+                        <option value="Faridabad">
+                            Faridabad
+                        </option>
+
+                        <option value="Meerut">
+                            Meerut
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="pin">
+                        PIN Code
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pin"
+                        placeholder="6-digit PIN"
+                        maxlength="6"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <p id="pin-message" class="pin-message"></p>
+
+        </section>
+
+
+        <!-- PAYMENT -->
+
+        <section class="checkout-card">
+
+            <h2>💳 Payment Method</h2>
+
+
+            <div class="payment-options">
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Cash on Delivery"
+                        checked
+                    >
+
+                    <span>
+                        💵 Cash on Delivery
+                    </span>
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="UPI"
+                    >
+
+                    <span>
+                        📱 UPI
+                    </span>
+
+                </label>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <section class="checkout-card">
+
+            <h2>🛍️ Order Summary</h2>
+
+            <div id="checkout-items"></div>
+
+            <div class="checkout-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="checkout-total">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <button
+            type="submit"
+            id="place-order-btn"
+            class="place-order-btn"
+        >
+            Place Order 🎀
+        </button>
+
+
+    </form>
+
+
+    <!-- SUCCESS -->
+
+    <section
+        id="order-success"
+        class="order-success"
+        style="display:none;"
+    >
+
+        <div class="success-icon">
+            🎉
+        </div>
+
+        <h1>
+            Order Placed Successfully!
+        </h1>
+
+        <p>
+            Thank you for shopping with
+            <strong>Cozy Crochet Loops</strong> 💕
+        </p>
+
+
+        <div class="order-id-box">
+
+            <p>
+                Your Order ID
+            </p>
+
+            <strong id="success-order-id">
+                CCL-000000
+            </strong>
+
+        </div>
+
+
+        <p class="success-note">
+            Please keep your Order ID safe for tracking your order.
+        </p>
+
+
+        <div class="success-buttons">
+
+            <a
+                href="index.html#my-orders"
+                class="hero-btn"
+            >
+                View My Orders 📦
+            </a>
+
+
+            <a
+                href="index.html#shop"
+                class="secondary-btn"
+            >
+                Continue Shopping 🛍️
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+const cityPins = {
+
+    "Ghaziabad": [
+        "201001",
+        "201002",
+        "201003",
+        "201004",
+        "201005",
+        "201006",
+        "201007",
+        "201009",
+        "201010",
+        "201012"
+    ],
+
+    "Noida": [
+        "201301",
+        "201302",
+        "201303",
+        "201304",
+        "201305",
+        "201306",
+        "201307",
+        "201308"
+    ],
+
+    "Greater Noida": [
+        "201306",
+        "201308",
+        "203201",
+        "203202"
+    ],
+
+    "Delhi": [
+        "110001",
+        "110002",
+        "110003",
+        "110004",
+        "110005",
+        "110006",
+        "110007",
+        "110008",
+        "110009",
+        "110010"
+    ],
+
+    "Gurugram": [
+        "122001",
+        "122002",
+        "122003",
+        "122004",
+        "122005",
+        "122006",
+        "122007",
+        "122008",
+        "122009"
+    ],
+
+    "Faridabad": [
+        "121001",
+        "121002",
+        "121003",
+        "121004",
+        "121005",
+        "121006",
+        "121007",
+        "121008"
+    ],
+
+    "Meerut": [
+        "250001",
+        "250002",
+        "250003",
+        "250004",
+        "250005",
+        "250006",
+        "250007",
+        "250008"
+    ]
+
+};
+
+
+function getCart() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem("cozyCart")
+        ) || [];
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+function loadCustomerDetails() {
+
+    try {
+
+        const saved =
+            JSON.parse(
+                localStorage.getItem("cozyCustomer")
+            );
+
+
+        if (!saved) {
+            return;
+        }
+
+
+        document.getElementById("customer-name").value =
+            saved.name || "";
+
+
+        document.getElementById("customer-phone").value =
+            saved.phone || "";
+
+
+        document.getElementById("house").value =
+            saved.house || "";
+
+
+        document.getElementById("area").value =
+            saved.area || "";
+
+
+        document.getElementById("city").value =
+            saved.city || "";
+
+
+        document.getElementById("pin").value =
+            saved.pin || "";
+
+    } catch (error) {
+
+        console.log("No saved customer details.");
+
+    }
+
+}
+
+
+function displayCheckout() {
+
+    const cart = getCart();
+
+    const itemsContainer =
+        document.getElementById("checkout-items");
+
+    const totalElement =
+        document.getElementById("checkout-total");
+
+
+    if (cart.length === 0) {
+
+        itemsContainer.innerHTML = `
+
+            <div class="empty-cart">
+
+                <h2>Your cart is empty 🧺</h2>
+
+                <p>
+                    Please add products before checking out.
+                </p>
+
+                <a
+                    href="index.html#shop"
+                    class="hero-btn"
+                >
+                    Go Shopping 🛍️
+                </a>
+
+            </div>
+
+        `;
+
+
+        document.getElementById(
+            "place-order-btn"
+        ).style.display = "none";
+
+
+        totalElement.textContent = "₹0";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    let html = "";
+
+
+    cart.forEach(function(item) {
+
+        const quantity =
+            Number(item.quantity) || 1;
+
+
+        const price =
+            Number(item.price) || 0;
+
+
+        const itemTotal =
+            price * quantity;
+
+
+        total += itemTotal;
+
+
+        html += `
+
+            <div class="checkout-item">
+
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                >
+
+
+                <div>
+
+                    <strong>
+                        ${item.name}
+                    </strong>
+
+                    <p>
+                        Colour:
+                        ${item.color || "Black"}
+                    </p>
+
+                    <p>
+                        Quantity:
+                        ${quantity}
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ₹${itemTotal}
+                </strong>
+
+            </div>
+
+        `;
+
+    });
+
+
+    itemsContainer.innerHTML = html;
+
+    totalElement.textContent =
+        "₹" + total;
+
+}
+
+
+function createOrderId() {
+
+    const number =
+        Math.floor(
+            100000 +
+            Math.random() * 900000
+        );
+
+
+    return "CCL-" + number;
+
+}
+
+
+function getOrders() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                "cozyOrderHistory"
+            )
+        ) || [];
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+function saveOrders(orders) {
+
+    localStorage.setItem(
+        "cozyOrderHistory",
+        JSON.stringify(orders)
+    );
+
+}
+
+
+document.getElementById("city")
+.addEventListener("change", function() {
+
+    const city = this.value;
+
+    const pin =
+        document.getElementById("pin").value;
+
+    validatePin(city, pin);
+
+});
+
+
+document.getElementById("pin")
+.addEventListener("input", function() {
+
+    const city =
+        document.getElementById("city").value;
+
+    const pin = this.value;
+
+    validatePin(city, pin);
+
+});
+
+
+function validatePin(city, pin) {
+
+    const message =
+        document.getElementById("pin-message");
+
+
+    if (!city || !pin) {
+
+        message.textContent = "";
+
+        return false;
+
+    }
+
+
+    if (
+        !/^\d{6}$/.test(pin)
+    ) {
+
+        message.textContent =
+            "Please enter a 6-digit PIN.";
+
+        message.className =
+            "pin-message error";
+
+        return false;
+
+    }
+
+
+    if (
+        !cityPins[city] ||
+        !cityPins[city].includes(pin)
+    ) {
+
+        message.textContent =
+            "This PIN is not available for the selected city.";
+
+        message.className =
+            "pin-message error";
+
+        return false;
+
+    }
+
+
+    message.textContent =
+        "✓ Delivery available to this PIN.";
+
+    message.className =
+        "pin-message success";
+
+    return true;
+
+}
+
+
+document.getElementById("checkout-form")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const cart = getCart();
+
+
+    if (cart.length === 0) {
+
+        alert(
+            "Your cart is empty."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        document.getElementById(
+            "customer-name"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "customer-phone"
+        ).value.trim();
+
+
+    const house =
+        document.getElementById(
+            "house"
+        ).value.trim();
+
+
+    const area =
+        document.getElementById(
+            "area"
+        ).value.trim();
+
+
+    const city =
+        document.getElementById(
+            "city"
+        ).value;
+
+
+    const pin =
+        document.getElementById(
+            "pin"
+        ).value.trim();
+
+
+    const payment =
+        document.querySelector(
+            'input[name="payment"]:checked'
+        ).value;
+
+
+    if (
+        !/^\d{10}$/.test(phone)
+    ) {
+
+        alert(
+            "Please enter a valid 10-digit phone number."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !validatePin(city, pin)
+    ) {
+
+        alert(
+            "Please enter a valid PIN for your selected city."
+        );
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    cart.forEach(function(item) {
+
+        total +=
+            (Number(item.price) || 0) *
+            (Number(item.quantity) || 1);
+
+    });
+
+
+    const orderId =
+        createOrderId();
+
+
+    const customer = {
+
+        name: name,
+
+        phone: phone,
+
+        house: house,
+
+        area: area,
+
+        city: city,
+
+        pin: pin
+
+    };
+
+
+    const order = {
+
+        id: orderId,
+
+        date: new Date().toLocaleString(),
+
+        status: "Order Placed",
+
+        customer: customer,
+
+        payment: payment,
+
+        items: cart,
+
+        total: total
+
+    };
+
+
+    const orders =
+        getOrders();
+
+
+    orders.unshift(order);
+
+
+    saveOrders(orders);
+
+
+    localStorage.setItem(
+        "cozyCustomer",
+        JSON.stringify(customer)
+    );
+
+
+    localStorage.removeItem(
+        "cozyCart"
+    );
+
+
+    document.getElementById(
+        "checkout-form"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "order-success"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "success-order-id"
+    ).textContent = orderId;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+loadCustomerDetails();
+
+displayCheckout();
+
+</script>
+
+</body>
+
+</html>
